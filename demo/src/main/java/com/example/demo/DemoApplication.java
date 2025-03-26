@@ -19,4 +19,5 @@ public class DemoApplication {
 			kafkaTemplate.send("testTopic", "Hello Kafka");
 		};
 	}
+
 }
