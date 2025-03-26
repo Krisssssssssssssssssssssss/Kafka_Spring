@@ -10,8 +10,6 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import org.springframework.kafka.core.DefaultKafkaProducerFactory;
-import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
 import java.util.HashMap;
@@ -36,6 +34,8 @@ public class KafkaConsumerConfig {
     public ConsumerFactory<String, String> comsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig());
     }
+    //What factory creates the listeners
+    //The listener we used in the KafkaListener Component
     public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> factory (
             ConsumerFactory<String, String> comsumerFactory
     ){

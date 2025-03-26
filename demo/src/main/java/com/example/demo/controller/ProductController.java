@@ -22,6 +22,8 @@ public class ProductController {
 
     @GetMapping
     public String testGet (){
+        //So when this >> Send Hello to Kafka, and whoever listens to this topic, will get the Hello
+        //Taken from the ProducerConfig
         kafkaTemplate.send("testTopic", "Hello Kafka");
         ProductModel model = new ProductModel();
         model.setName("prod");

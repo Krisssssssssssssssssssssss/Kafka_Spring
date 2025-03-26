@@ -34,6 +34,8 @@ public class KafkaProducerConfig {
     public KafkaTemplate<String, String> kafkaTemplate (
             ProducerFactory<String, String> producerFactory
     ){
+        //The tool for sending messages to Kafka server
+        //The one that can be triggered in the Endpoints
         return new KafkaTemplate<>(producerFactory);
     }
 }

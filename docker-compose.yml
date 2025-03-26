@@ -15,9 +15,11 @@ services:
       context: ./frontend
     image: angular_frontend
     ports:
-      - "${FRONTEND_PORT:-4200}:80"
+      - "${FRONTEND_PORT:-4200}:4200"
     env_file:
       - .env
+    volumes:
+      - ./frontend:/app
 
   kafka:
     image: apache/kafka:4.0.0
