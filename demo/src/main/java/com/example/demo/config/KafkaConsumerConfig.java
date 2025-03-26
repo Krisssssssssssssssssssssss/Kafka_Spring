@@ -1,7 +1,6 @@
 package com.example.demo.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -34,12 +33,11 @@ public class KafkaConsumerConfig {
     public ConsumerFactory<String, String> comsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig());
     }
-    //What factory creates the listeners
-    //The listener we used in the KafkaListener Component
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> factory (
+
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> factory(
             ConsumerFactory<String, String> comsumerFactory
-    ){
-        ConcurrentKafkaListenerContainerFactory<String,String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ) {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(comsumerFactory);
         return factory;
     }
