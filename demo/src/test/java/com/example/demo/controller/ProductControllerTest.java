@@ -13,10 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @AutoConfigureMockMvc
 class ProductControllerTest {
-    @Autowired
-    MockMvc mockMvc;
-    @Autowired
-    ProductRepo productRepo;
+//    @Autowired
+//    MockMvc mockMvc;
+//    @Autowired
+//    ProductRepo productRepo;
 
     @Test
     @DirtiesContext
