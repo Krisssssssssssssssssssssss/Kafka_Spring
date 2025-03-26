@@ -46,6 +46,7 @@ Thumbs.db
 /.angular/cache
 /.angular/config.json
 .node_modules
+node_modules
 # Node
 /node_modules
 

@@ -1,27 +1,29 @@
 version: '3.8'
 
 services:
-  app:
+  kafka:
+    image: krisssssssss/kafka
+    ports:
+      - "9092:9092"
+
+  kafka_backend:
     build:
       context: ./demo
-    image: test_kafka
+    image: krisssssssss/kafka_backend
     ports:
       - "${PORT}:8080"
     env_file:
       - .env
 
-  frontend:
+  angular_frontend:
     build:
       context: ./frontend
-    image: angular_frontend
+    image: krisssssssss/angular_frontend
     ports:
-      - "${FRONTEND_PORT:-4200}:4200"
+      - "${FRONTEND_PORT:-4400}:4400"
     env_file:
       - .env
     volumes:
       - ./frontend:/app
-
-  kafka:
-    image: apache/kafka:4.0.0
-    ports:
-      - "9092:9092"
+    stdin_open: true
+    tty: true
