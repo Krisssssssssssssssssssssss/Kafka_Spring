@@ -9,3 +9,17 @@ services:
       - "${PORT}:8080"
     env_file:
       - .env
+
+  frontend:
+    build:
+      context: ./frontend
+    image: angular_frontend
+    ports:
+      - "${FRONTEND_PORT:-4200}:80"
+    env_file:
+      - .env
+
+  kafka:
+    image: apache/kafka:4.0.0
+    ports:
+      - "9092:9092"
