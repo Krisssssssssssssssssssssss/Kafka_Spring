@@ -7,6 +7,7 @@ import com.example.demo.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.kafka.core.KafkaTemplate;
 
+@CrossOrigin(origins = "http://localhost:4400")
 @RestController
 @RequestMapping("/api")
 public class ProductController {
